@@ -11,9 +11,11 @@ module App = [%styled.div (~background) => {j|
   flex-direction: column;
 
   background-color: $background;
+
+  cursor: pointer;
 |j}];
 
-module Link = [%styled.a {|
+module Link = [%styled.asdf {|
   color: #FFFFFF;
   font-size: 36px;
   margin-top: 16px;

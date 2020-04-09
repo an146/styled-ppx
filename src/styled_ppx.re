@@ -528,19 +528,17 @@ let moduleMapper = (_, _) => {
       let tag = getTag(txt);
 
       if (!List.exists(t => t === tag, Html.tags)) {
-        ();
-          /* TODO: Add warning into an invalid html tag */
+        raise(Invalid_argument("styled-ppx: This isn't a valid HTMLElement"))
       };
 
       if (List.length(namedArgList) === 0) {
-        ();
-          /* TODO: Show warning or doing the static analysis */
+        raise(Warning("styled-ppx: You could turn this into a string!"));
       };
 
       let (str, delim) =
         switch (functionExpr) {
         | Pexp_constant(Pconst_string(str, delim)) => (str, delim)
-        | _ => ("", Some("")) /* TODO: Throw an error */
+        | _ => ("", Some("")) /* This shoudn't be possible */
         };
 
       let loc = expression.pexp_loc;
@@ -629,8 +627,7 @@ let moduleMapper = (_, _) => {
       let tag = getTag(txt);
 
       if (!List.exists(t => t === tag, Html.tags)) {
-        ();
-          /* TODO: Add warning into an invalid html tag */
+        raise(Invalid_argument("styled-ppx: This isn't a valid HTMLElement"));
       };
 
       let loc = pexp_loc;
