@@ -33,6 +33,9 @@
     "@opam/sedlex": "2.1",
     "@reason-native/rely": "^3.2.1"
   },
+  "resolutions": {
+    "@opam/dune": "1.11.4"
+  },
   "scripts": {
     "test_snapshot": "dune runtest",
     "test_snapshot:promote": "dune runtest --auto-promote",
