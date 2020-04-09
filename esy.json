@@ -13,7 +13,7 @@
     "url": "https://github.com/davesnx/styled-ppx.git"
   },
   "esy": {
-    "build": "esy b dune build -p #{self.name}",
+    "build": "dune build -p #{self.name}",
     "buildEnv": {
       "ODOC_SYNTAX": "re"
     },

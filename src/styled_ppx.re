@@ -528,11 +528,11 @@ let moduleMapper = (_, _) => {
       let tag = getTag(txt);
 
       if (!List.exists(t => t === tag, Html.tags)) {
-        raise(Invalid_argument("styled-ppx: This isn't a valid HTMLElement"))
+        raise(Invalid_argument({j|Warning: The tag $tag in [%styled.$tag ...] isn't a valid HTMLElement|j}));
       };
 
       if (List.length(namedArgList) === 0) {
-        raise(Warning("styled-ppx: You could turn this into a string!"));
+        raise(Invalid_argument({j|Warning: The function applied doesn't have any argument, replace the func with a string for better performance.|j}));
       };
 
       let (str, delim) =
@@ -627,7 +627,7 @@ let moduleMapper = (_, _) => {
       let tag = getTag(txt);
 
       if (!List.exists(t => t === tag, Html.tags)) {
-        raise(Invalid_argument("styled-ppx: This isn't a valid HTMLElement"));
+        raise(Invalid_argument({j|Warning: The tag $tag in [%styled.$tag ...] isn't a valid HTMLElement|j}));
       };
 
       let loc = pexp_loc;
