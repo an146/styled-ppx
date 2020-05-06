@@ -28,6 +28,9 @@ module Link = [%styled.div {|
   margin-top: 16px;
 |}];
 
+module Empty = [%styled]
+module Empty1 = [%styled ""]
+
 let space = "10px";
 
 module Component = [%styled (~background: string, ~space: int) => {j|
